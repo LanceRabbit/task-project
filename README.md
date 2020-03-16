@@ -1,24 +1,50 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Task-Project
 
-Things you may want to cover:
+## setting
 
-* Ruby version
+Rails: 5.2.3
 
-* System dependencies
+Ruby: 2.5.7
 
-* Configuration
+DB: postgresql
 
-* Database creation
+## Table Schema
 
-* Database initialization
+table users
 
-* How to run the test suite
+|column | type|
+|---|---|
+|email | string|
+|name | string|
+|password | string|
+|created_at| datetime|
+|updated_at| datetime|
 
-* Services (job queues, cache servers, search engines, etc.)
+table tasks
 
-* Deployment instructions
+|column | type|
+|--|--|
+|title | string|
+|content | text|
+|state | integer|
+|priority | integer|
+|end_time | date|
+|user_id | integer|
+|created_at| datetime|
+|updated_at| datetime|
 
-* ...
+table task_tags
+
+|column | type|
+|---|---|
+|task_id | integer|
+|tag_id | integer|
+
+table tags
+
+|column | type|
+|---|---|
+|name | string|
+|created_at| datetime|
+|updated_at| datetime|
