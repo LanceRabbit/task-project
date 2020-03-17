@@ -37,6 +37,9 @@ gem 'dotenv-rails', require: 'dotenv/rails-now'
 # use pg for database
 gem 'pg', '~> 1.2.2'
 
+# use form
+gem 'simple_form', '>= 5.0.2'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
