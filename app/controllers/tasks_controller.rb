@@ -23,6 +23,19 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+    @task = Task.find_by(id: params[:id])
+  end
+
+  def update
+    @task = Task.find_by(id: params[:id])
+    if @task.update(task_params)
+      redirect_to task_path(@task)
+    else
+      render root_path
+    end
+  end
+
   private
 
   def task_params

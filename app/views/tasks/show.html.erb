@@ -1,5 +1,5 @@
 <h1>task show page</h1>
-
+<%= button_to "EDIT Task", edit_task_path, :method => "get" %>
 <div style="border: 1px solid black; width: 250px;">
   <div>title: <%=@task.title%></div>
   <div>content: <%=@task.content%></div>
