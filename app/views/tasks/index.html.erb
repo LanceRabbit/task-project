@@ -1,1 +1,17 @@
 <h1> Task-Project </h1>
+<table border="1" style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <td>id</td>
+      <td>title</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.title %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
