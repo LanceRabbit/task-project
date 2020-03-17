@@ -13,7 +13,10 @@
       <tr>
         <td><%= task.id %></td>
         <td><%= task.title %></td>
-        <td><%= button_to "Show", task_path(task), :method => "get" %></td>
+        <td style="display: flex">
+           <%= button_to "Show", task_path(task), :method => "get" %>
+           <%= button_to "Edit", edit_task_path(task), :method => "get" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
