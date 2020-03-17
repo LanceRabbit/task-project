@@ -2,8 +2,9 @@
 <table border="1" style="border-collapse: collapse;">
   <thead>
     <tr>
-      <td>id</td>
-      <td>title</td>
+      <td>ID</td>
+      <td>Title</td>
+      <td>Action</td>
     </tr>
   </thead>
   <tbody>
@@ -11,6 +12,7 @@
       <tr>
         <td><%= task.id %></td>
         <td><%= task.title %></td>
+        <td><%= button_to "Show", task_path(task), :method => "get" %></td>
       </tr>
     <% end %>
   </tbody>
