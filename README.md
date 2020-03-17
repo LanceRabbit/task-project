@@ -1,13 +1,28 @@
 
 # Task-Project
 
-## setting
+## env
 
 Rails: 5.2.3
 
 Ruby: 2.5.7
 
 DB: postgresql
+
+## setup setting
+
+### set up .env and database file
+
+```shell
+cp .env.example .env
+cp config/database.example.yml config/database.yml
+```
+
+### run database via docker-compose
+
+```shell
+docker-compose up
+```
 
 ## Table Schema
 
