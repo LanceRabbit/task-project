@@ -16,6 +16,7 @@
         <td style="display: flex">
            <%= button_to "Show", task_path(task), :method => "get" %>
            <%= button_to "Edit", edit_task_path(task), :method => "get" %>
+           <%= button_to "Delete", task_path(task), data: {:confirm => 'Really want to delete this task?'}, :method => "delete" %>
         </td>
       </tr>
     <% end %>
