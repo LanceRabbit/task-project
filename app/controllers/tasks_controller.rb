@@ -1,13 +1,12 @@
 class TasksController < ApplicationController
+  before_action :set_task, only: %i[show edit update destroy]
+
   def index
     @tasks = Task.all
   end
 
   def show
-    @task = Task.find_by(id: params[:id])
-    if @task.nil?
-      return redirect_to root_path
-    end
+    redirect_to root_path if @task.nil?
   end
 
   def new
@@ -24,11 +23,10 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find_by(id: params[:id])
+    redirect_to root_path if @task.nil?
   end
 
   def update
-    @task = Task.find_by(id: params[:id])
     if @task.update(task_params)
       redirect_to task_path(@task)
     else
@@ -37,10 +35,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find_by(id: params[:id])
-    if @task.present?
-      @task.destroy
-    end
+    @task.destroy if @task.present?
     redirect_to root_path
   end
 
@@ -48,6 +43,10 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title, :content)
+  end
+
+  def set_task
+    @task = Task.find_by(id: params[:id])
   end
 
 end
