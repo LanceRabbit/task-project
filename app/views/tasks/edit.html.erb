@@ -1,9 +1,3 @@
 <h1>update task</h1>
 
-<%= simple_form_for @task do |f| %>
-  <%= f.input :title %>
-  <%= f.input :content %>
-
-  <%= f.button :submit, 'update task' %>
-<% end %>
-<button style="border: 1px solid black"><%= link_to "Back", :back %></button>
+<%= render partial: "form", locals:{task: @task} %>
