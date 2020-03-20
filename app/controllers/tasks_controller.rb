@@ -1,12 +1,12 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update destroy]
-
+  before_action :check_task_exist?, only: %i[show edit update destroy]
   def index
     @tasks = Task.all
   end
 
   def show
-    redirect_to root_path if @task.nil?
+
   end
 
   def new
@@ -16,26 +16,30 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
+      flash[:notice] = "Create Task successfully"
       redirect_to task_path(@task)
     else
+      flash[:alert] = "Create Task Failed"
       render new_task_path
     end
   end
 
   def edit
-    redirect_to root_path if @task.nil?
+
   end
 
   def update
     if @task.update(task_params)
+      flash[:notice] = "Update Task successfully"
       redirect_to task_path(@task)
-    else
-      render root_path
     end
   end
 
   def destroy
-    @task.destroy if @task.present?
+    if @task.present?
+      @task.destroy
+      flash[:notice] = "Destroy Task successfully"
+    end
     redirect_to root_path
   end
 
@@ -47,6 +51,13 @@ class TasksController < ApplicationController
 
   def set_task
     @task = Task.find_by(id: params[:id])
+  end
+
+  def check_task_exist?
+    if @task.nil?
+      flash[:alert] = "This Task not exist"
+      redirect_to root_path
+    end
   end
 
 end
