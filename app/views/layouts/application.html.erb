@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <% if flash[:notice].present? %>
+      <h3 style="color: green"> <%= flash[:notice]%></h3>
+    <% elsif flash[:alert].present? %>
+      <h3 style="color: red"> <%= flash[:alert]%></h3>
+    <%end%>
     <%= yield %>
   </body>
 </html>

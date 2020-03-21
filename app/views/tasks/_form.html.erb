@@ -1,0 +1,7 @@
+<%= simple_form_for @task do |f| %>
+  <%= f.input :title %>
+  <%= f.input :content %>
+
+  <%= f.button :submit, new_data?(@task) %>
+<% end %>
+<button style="border: 1px solid black"><%= link_to "Back", :back %></button>
