@@ -1,0 +1,24 @@
+<h1> Task-Project </h1>
+<%= button_to "ADD New Task", new_task_path, :method => "get" %>
+<table border="1" style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Title</td>
+      <td>Action</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.id %></td>
+        <td><%= task.title %></td>
+        <td style="display: flex">
+           <%= button_to "Show", task_path(task), :method => "get" %>
+           <%= button_to "Edit", edit_task_path(task), :method => "get" %>
+           <%= button_to "Delete", task_path(task), data: {:confirm => 'Really want to delete this task?'}, :method => "delete" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
