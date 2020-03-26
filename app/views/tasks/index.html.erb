@@ -1,5 +1,5 @@
 <h1> Task-Project </h1>
-<%= button_to "ADD New Task", new_task_path, :method => "get" %>
+<%= button_to t('views.tasks.add'), new_task_path, :method => "get" %>
 <table border="1" style="border-collapse: collapse;">
   <thead>
     <tr>
@@ -14,9 +14,9 @@
         <td><%= task.id %></td>
         <td><%= task.title %></td>
         <td style="display: flex">
-           <%= button_to "Show", task_path(task), :method => "get" %>
-           <%= button_to "Edit", edit_task_path(task), :method => "get" %>
-           <%= button_to "Delete", task_path(task), data: {:confirm => 'Really want to delete this task?'}, :method => "delete" %>
+           <%= button_to t('views.show'), task_path(task), :method => "get" %>
+           <%= button_to t('views.edit'), edit_task_path(task), :method => "get" %>
+           <%= button_to t('views.delete'), task_path(task), data: {:confirm => t('views.delete_confirm_msg')}, :method => "delete" %>
         </td>
       </tr>
     <% end %>

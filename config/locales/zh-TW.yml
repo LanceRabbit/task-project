@@ -28,29 +28,30 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-en:
+zh-TW:
   views:
-    create: "Create"
-    update: "Update"
-    edit: "Edit"
-    show: "Show"
-    delete: "Delete"
-    delete_confirm_msg: "Really want to delete this data?"
-    back: "Back"
-    home: "Home"
+    create: "建立"
+    update: "更新"
+    edit: "編輯"
+    show: "顯示"
+    delete: "刪除"
+    delete_confirm_msg: "確定要刪除嗎？"
+    back: "返回"
+    home: "首頁"
     tasks:
-      title: "Title"
-      content: "Content"
-      add: "Add Task"
+      title: "標題"
+      content: "內容"
+      add: "新增任務"
+      alert: "任務不存在"
   tasks:
     create:
-      notice: "Create Task successfully"
-      alert: "Create Task Failed"
+      notice: "新增任務成功"
+      alert: "新增任務失敗"
     update:
-      notice: "Update Task successfully"
+      notice: "更新任務成功"
     destroy:
-      notice: "Destroy Task successfully"
+      notice: "刪除成功"
     show:
-      alert: "This Task not exist"
+      alert: "任務不存在"
     edit:
-      alert: "This Task not exist"
+      alert: "任務不存在"
