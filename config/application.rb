@@ -18,5 +18,7 @@ module TaskProject
 
     # i18n default for zh-Tw
     config.i18n.default_locale = "zh-TW"
+    # set time zone to Taipei
+    config.time_zone = "Taipei"
   end
 end
