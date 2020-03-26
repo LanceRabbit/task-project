@@ -16,10 +16,10 @@ class TasksController < ApplicationController
   def create
     @task = Task.new(task_params)
     if @task.save
-      flash[:notice] = "Create Task successfully"
+      flash[:notice] = t(".notice")
       redirect_to task_path(@task)
     else
-      flash[:alert] = "Create Task Failed"
+      flash[:alert] = t(".alert")
       render new_task_path
     end
   end
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
 
   def update
     if @task.update(task_params)
-      flash[:notice] = "Update Task successfully"
+      flash[:notice] = t(".notice")
       redirect_to task_path(@task)
     end
   end
@@ -38,7 +38,7 @@ class TasksController < ApplicationController
   def destroy
     if @task.present?
       @task.destroy
-      flash[:notice] = "Destroy Task successfully"
+      flash[:notice] = t(".notice")
     end
     redirect_to root_path
   end
@@ -55,7 +55,7 @@ class TasksController < ApplicationController
 
   def check_task_exist?
     if @task.nil?
-      flash[:alert] = "This Task not exist"
+      flash[:alert] = t(".alert")
       redirect_to root_path
     end
   end

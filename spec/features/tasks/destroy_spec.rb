@@ -6,7 +6,7 @@ RSpec.feature "DestroyTask", type: :feature do
     task
     visit tasks_path
     expect {
-      find('input[value="Delete"]').click
+      click_button I18n.t('views.delete')
     }.to change{ Task.count }.by(-1)
   end
 end
