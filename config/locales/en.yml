@@ -41,7 +41,10 @@ en:
     tasks:
       title: "Title"
       content: "Content"
+      created_at: "Created time"
       add: "Add Task"
+      alert: "Task not exist"
+      action: "Action"
   tasks:
     create:
       notice: "Create Task successfully"
