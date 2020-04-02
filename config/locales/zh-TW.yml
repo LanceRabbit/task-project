@@ -41,8 +41,10 @@ zh-TW:
     tasks:
       title: "標題"
       content: "內容"
+      created_at: "建立時間"
       add: "新增任務"
       alert: "任務不存在"
+      action: "動作"
   tasks:
     create:
       notice: "新增任務成功"
