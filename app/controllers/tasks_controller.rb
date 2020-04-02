@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update destroy]
   before_action :check_task_exist?, only: %i[show edit update destroy]
   def index
-    @tasks = Task.all
+    @tasks = Task.order_created
   end
 
   def show
