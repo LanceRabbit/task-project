@@ -51,9 +51,17 @@ en:
       alert: "Create Task Failed"
     update:
       notice: "Update Task successfully"
+      alert: "Update Task Failed"
     destroy:
       notice: "Destroy Task successfully"
     show:
       alert: "This Task not exist"
     edit:
       alert: "This Task not exist"
+  activerecord:
+    errors:
+      models:
+        task:
+          attributes:
+            title:
+              blank: "The tilte can not blank"
