@@ -1,5 +1,13 @@
+<% if task.errors.present?%>
+  <ul>
+    <% task.errors.each do |error, message| %>
+      <li style="color:red"><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <%= simple_form_for @task do |f| %>
-  <%= f.input :title, label: t('views.tasks.title') %>
+  <%= f.input :title, label: t('views.tasks.title'), error: false %>
   <%= f.input :content, label: t('views.tasks.content') %>
 
   <%= f.button :submit, new_data?(@task) %>
