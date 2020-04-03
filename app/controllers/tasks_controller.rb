@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[show edit update destroy]
   before_action :check_task_exist?, only: %i[show edit update destroy]
+
   def index
     @tasks = Task.order_created
   end
@@ -32,6 +33,9 @@ class TasksController < ApplicationController
     if @task.update(task_params)
       flash[:notice] = t(".notice")
       redirect_to task_path(@task)
+    else
+      flash[:alert] = t(".alert")
+      render :action => 'edit'
     end
   end
 
