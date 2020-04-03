@@ -51,9 +51,17 @@ zh-TW:
       alert: "新增任務失敗"
     update:
       notice: "更新任務成功"
+      alert: "更新任務失敗"
     destroy:
       notice: "刪除成功"
     show:
       alert: "任務不存在"
     edit:
       alert: "任務不存在"
+  activerecord:
+    errors:
+      models:
+        task:
+          attributes:
+            title:
+              blank: "標題不得為空"
