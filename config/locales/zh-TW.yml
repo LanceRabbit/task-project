@@ -54,6 +54,11 @@ zh-TW:
         completed: "完成"
         execute: "執行"
         finish: "完成"
+      priority_t: "優先權"
+      priority:
+        low: "低"
+        medium: "中"
+        high: "高"
   tasks:
     create:
       notice: "新增任務成功"

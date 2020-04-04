@@ -11,6 +11,7 @@ class Task < ApplicationRecord
   scope :order_created, ->(orded) { order(orded) }
 
   enum state: %i[todo doing completed]
+  enum priority: %i[low medium high]
 
   aasm column: :state, enum: true do
     state :todo, initial: true

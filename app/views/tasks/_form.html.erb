@@ -11,6 +11,7 @@
   <%= f.input :content, label: t('views.tasks.content') %>
   <%= f.input :start_date, label: t('views.tasks.start_date')%>
   <%= f.input :end_date, label: t('views.tasks.end_date')%>
+  <%= f.input :priority, as: :radio_buttons, label: t('views.tasks.priority_t'), collection: priority_options, label_method: :second, value_method: :first %>
 
   <%= f.button :submit, new_data?(@task) %>
 <% end %>
