@@ -1,8 +1,25 @@
 <h1>task show page</h1>
 <%= button_to t('views.edit'), edit_task_path, :method => "get" %>
 <div style="border: 1px solid black; width: 250px;">
-  <div>title: <%= @task.title %></div>
-  <div>content: <%= @task.content %></div>
+  <div>
+    <%= t('views.tasks.title')%>:
+    <%= @task.title %>
+  </div>
+  <hr>
+  <div>
+    <%= t('views.tasks.content')%>:
+    <%= @task.content %>
+  </div>
+  <hr>
+  <div>
+    <%= t('views.tasks.start_date')%>:
+    <%= @task.start_date %>
+  </div>
+  <hr>
+  <div>
+    <%= t('views.tasks.end_date')%>:
+    <%= @task.end_date %>
+  </div>
 </div>
 <br>
 <%= link_to t('views.home'), root_path %>

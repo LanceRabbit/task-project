@@ -9,6 +9,8 @@
 <%= simple_form_for @task do |f| %>
   <%= f.input :title, label: t('views.tasks.title'), error: false %>
   <%= f.input :content, label: t('views.tasks.content') %>
+  <%= f.input :start_date, label: t('views.tasks.start_date')%>
+  <%= f.input :end_date, label: t('views.tasks.end_date')%>
 
   <%= f.button :submit, new_data?(@task) %>
 <% end %>

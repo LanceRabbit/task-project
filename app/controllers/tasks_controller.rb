@@ -3,7 +3,7 @@ class TasksController < ApplicationController
   before_action :check_task_exist?, only: %i[show edit update destroy]
 
   def index
-    @tasks = Task.order_created
+    @tasks = Task.order_created(sort_params(params[:sort].try(&:to_sym)))
   end
 
   def show
@@ -49,8 +49,12 @@ class TasksController < ApplicationController
 
   private
 
+  def sort_params(type)
+    Task::SORT_OPTIONS[type] || Task::SORT_OPTIONS[:created_at]
+  end
+
   def task_params
-    params.require(:task).permit(:title, :content)
+    params.require(:task).permit(:title, :content, :start_date, :end_date)
   end
 
   def set_task
