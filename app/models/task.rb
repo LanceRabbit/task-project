@@ -1,4 +1,6 @@
 class Task < ApplicationRecord
+  include AASM
+
   validates :title, presence: true
 
   SORT_OPTIONS = {
@@ -7,4 +9,19 @@ class Task < ApplicationRecord
     end_date: "end_date desc"
   }
   scope :order_created, ->(orded) { order(orded) }
+
+  enum state: %i[todo doing completed]
+
+  aasm column: :state, enum: true do
+    state :todo, initial: true
+    state :doing, :completed
+
+    event :execute do
+      transitions from: :todo, to: :doing
+    end
+
+    event :finish do
+      transitions from: %i[todo doing], to: :completed
+    end
+  end
 end
