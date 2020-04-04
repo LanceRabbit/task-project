@@ -38,6 +38,11 @@ zh-TW:
     delete_confirm_msg: "確定要刪除嗎？"
     back: "返回"
     home: "首頁"
+    pagination:
+      first: "<< 第一頁"
+      last: "最後一頁 >>"
+      previous: "< 上一頁"
+      next: "下一頁 >"
     tasks:
       title: "標題"
       content: "內容"
@@ -59,6 +64,7 @@ zh-TW:
         low: "低"
         medium: "中"
         high: "高"
+
   tasks:
     create:
       notice: "新增任務成功"
