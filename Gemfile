@@ -41,6 +41,8 @@ gem 'pg', '~> 1.2.2'
 gem 'simple_form', '>= 5.0.2'
 # i18n 5.1 for rails 5.2.x
 gem 'rails-i18n', '~> 5.1'
+# aasm for contol the state changing
+gem 'aasm', '>= 5.0.8'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false

@@ -20,6 +20,12 @@
     <%= t('views.tasks.end_date')%>:
     <%= @task.end_date %>
   </div>
+  <hr>
+  <div>
+    <%= t('views.tasks.state_t')%> :
+    <%= t("views.tasks.state.#{@task.state}") %>
+    <%= state_control(@task) %>
+  </div>
 </div>
 <br>
 <%= link_to t('views.home'), root_path %>
