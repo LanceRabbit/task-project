@@ -26,6 +26,11 @@
     <%= t("views.tasks.state.#{@task.state}") %>
     <%= state_control(@task) %>
   </div>
+  <hr>
+  <div>
+    <%= t('views.tasks.priority_t')%> :
+    <%= t("views.tasks.priority.#{@task.priority}") %>
+  </div>
 </div>
 <br>
 <%= link_to t('views.home'), root_path %>
