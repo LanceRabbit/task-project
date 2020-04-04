@@ -24,4 +24,10 @@ module TasksHelper
       [Task.states[state], I18n.t("views.tasks.state.#{state}")]
     end
   end
+
+  def priority_options
+    Task.priorities.keys.map do |priority|
+      [priority, I18n.t("views.tasks.priority.#{priority}")]
+    end
+  end
 end

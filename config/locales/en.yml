@@ -54,6 +54,11 @@ en:
         completed: "Completed"
         execute: "Execute"
         finish: "Finish"
+      priority_t: "priority"
+      priority:
+        low: "low"
+        medium: "medium"
+        high: "high"
   tasks:
     create:
       notice: "Create Task successfully"
