@@ -3,7 +3,8 @@ class TasksController < ApplicationController
   before_action :check_task_exist?, only: %i[show edit update destroy execute finish]
 
   def index
-    @tasks = Task.order_created(sort_params(params[:sort].try(&:to_sym)))
+    @q = Task.ransack(params[:q])
+    @tasks = @q.result.order_created(sort_params(params[:sort].try(&:to_sym)))
   end
 
   def show
