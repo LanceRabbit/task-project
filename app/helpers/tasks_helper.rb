@@ -19,4 +19,9 @@ module TasksHelper
     ctrl_str.html_safe
   end
 
+  def state_options
+    Task.states.keys.map do |state|
+      [Task.states[state], I18n.t("views.tasks.state.#{state}")]
+    end
+  end
 end

@@ -21,4 +21,25 @@ RSpec.describe Task, type: :model do
       end
     end
   end
+
+  describe 'search task by ransack' do
+    let(:task_1){ FactoryBot.create(:task) }
+    let(:task_2){ FactoryBot.create(:task, :second_task) }
+    before(:each) do
+      @task_1 = task_1
+      @task_2 = task_2
+    end
+
+    it 'search by title' do
+      q = {title_cont: @task_1.title}
+      tasks = Task.ransack(q).result
+      expect(tasks.first.id).to eq @task_1.id
+    end
+
+    it 'search by state' do
+      q = {state_eq: @task_2.state_before_type_cast}
+      tasks = Task.ransack(q).result
+      expect(tasks.first.id).to eq @task_2.id
+    end
+  end
 end
