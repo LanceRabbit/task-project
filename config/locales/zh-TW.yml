@@ -41,6 +41,8 @@ zh-TW:
     tasks:
       title: "標題"
       content: "內容"
+      start_date: "開始日期"
+      end_date: "結束日期"
       created_at: "建立時間"
       add: "新增任務"
       alert: "任務不存在"

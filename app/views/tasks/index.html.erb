@@ -4,8 +4,9 @@
   <thead>
     <tr>
       <td>ID</td>
-      <td><%=t('views.tasks.title')%></td>
-      <td><%= t('views.tasks.created_at')%></td>
+      <td><%= t('views.tasks.title')%></td>
+      <td><%= sort_option("end_date") %></td>
+      <td><%= sort_option("created_at") %></td>
       <td>Action</td>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
       <tr>
         <td><%= task.id %></td>
         <td><%= task.title %></td>
+        <td><%= l( task.end_date, format: :long)%></td>
         <td><%= l( task.created_at, format: :long)%></td>
         <td style="display: flex">
            <%= button_to t('views.show'), task_path(task), :method => "get" %>
