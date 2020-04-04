@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: %i[show edit update destroy]
-  before_action :check_task_exist?, only: %i[show edit update destroy]
+  before_action :set_task, only: %i[show edit update destroy execute finish]
+  before_action :check_task_exist?, only: %i[show edit update destroy execute finish]
 
   def index
     @tasks = Task.order_created(sort_params(params[:sort].try(&:to_sym)))
@@ -45,6 +45,20 @@ class TasksController < ApplicationController
       flash[:notice] = t(".notice")
     end
     redirect_to root_path
+  end
+
+  def execute
+    if @task.todo?
+      @task.execute!
+    end
+    redirect_back(fallback_location: root_path)
+  end
+
+  def finish
+    if !@task.completed?
+      @task.finish!
+    end
+    redirect_back(fallback_location: root_path)
   end
 
   private

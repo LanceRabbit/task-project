@@ -47,6 +47,13 @@ en:
       add: "Add Task"
       alert: "Task not exist"
       action: "Action"
+      state_t: "state"
+      state:
+        todo: "Todo"
+        doing: "Doing"
+        completed: "Completed"
+        execute: "Execute"
+        finish: "Finish"
   tasks:
     create:
       notice: "Create Task successfully"

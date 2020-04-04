@@ -47,6 +47,13 @@ zh-TW:
       add: "新增任務"
       alert: "任務不存在"
       action: "動作"
+      state_t: "狀態"
+      state:
+        todo: "待處理"
+        doing: "進行中"
+        completed: "完成"
+        execute: "執行"
+        finish: "完成"
   tasks:
     create:
       notice: "新增任務成功"
