@@ -6,6 +6,7 @@ RSpec.feature "Tasks", type: :feature do
       @task_1 = FactoryBot.create(:task, created_at: Date.today.weeks_ago(1))
       @task_2 = FactoryBot.create(:task, :second_task, end_date: Date.today + 4)
       @task_3 = FactoryBot.create(:task, :completed_task, created_at: Date.today.weeks_ago(1))
+      @high_task = FactoryBot.create(:task, :high_task, created_at: Date.today.weeks_ago(1))
       visit tasks_path
     end
 
@@ -25,6 +26,13 @@ RSpec.feature "Tasks", type: :feature do
       expect(
         find('table tbody tr:nth-child(1) td:nth-child(2)')
       ).to have_content(@task_1.title)
+    end
+
+    scenario "list task order by priority" do
+      click_link I18n.t('views.tasks.priority_t')
+      expect(
+        find('table tbody tr:nth-child(1) td:nth-child(2)')
+      ).to have_content(@high_task.title)
     end
 
     scenario "search todo tasks by title" do

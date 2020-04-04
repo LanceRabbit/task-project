@@ -6,11 +6,13 @@ class Task < ApplicationRecord
   SORT_OPTIONS = {
     created_at: "created_at desc",
     start_date: "start_date desc",
-    end_date: "end_date desc"
+    end_date: "end_date desc",
+    priority_t: "priority desc",
   }
   scope :order_created, ->(orded) { order(orded) }
 
   enum state: %i[todo doing completed]
+  enum priority: %i[low medium high]
 
   aasm column: :state, enum: true do
     state :todo, initial: true
