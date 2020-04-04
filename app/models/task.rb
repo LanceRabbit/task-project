@@ -1,5 +1,10 @@
 class Task < ApplicationRecord
   validates :title, presence: true
 
-  scope :order_created, -> { order(created_at: :desc)}
+  SORT_OPTIONS = {
+    created_at: "created_at desc",
+    start_date: "start_date desc",
+    end_date: "end_date desc"
+  }
+  scope :order_created, ->(orded) { order(orded) }
 end
