@@ -5,6 +5,7 @@ module TasksHelper
 
   def sort_option(type)
     link_to t("views.tasks.#{type}"), tasks_path(sort: type)
+
   end
 
   def state_control(task)
