@@ -5,11 +5,18 @@ $white: white;
 $black: black;
 
 .navbar {
-        margin-bottom: 0;
-        background: $black;
+  margin-bottom: 0;
+  background: $black;
 }
 
 .notify {
   margin-top: 5px;
   margin-bottom: 5px;
+}
+
+.action {
+  display: flex;
+  a {
+    margin-left: 5px;
+  }
 }

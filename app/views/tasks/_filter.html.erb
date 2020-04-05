@@ -1,0 +1,28 @@
+<div class="card">
+  <div class="card-header">
+    Filters
+  </div>
+  <div class="card-body">
+    <%= search_form_for @q do |f| %>
+
+      <div class="form-group">
+        <%= f.label t('views.tasks.title') %>
+        <%= f.text_field :title_cont, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :state %>
+        <%= f.select(:state_eq, options_for_select(state_options, f.object.state_eq), { include_blank: true }, {class: "form-control" }) %>
+      </div>
+
+      <div class="form-group">
+        <div class="float-right">
+          <%= link_to "Clear", request.path, :class => "btn btn-danger" %>
+
+          <%= f.submit class: 'btn btn-primary' %>
+        </div>
+      </div>
+
+    <% end %>
+  </div>
+</div>
