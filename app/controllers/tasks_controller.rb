@@ -20,6 +20,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
+    @task.user = User.first
     if @task.save
       flash[:notice] = t(".notice")
       redirect_to task_path(@task)

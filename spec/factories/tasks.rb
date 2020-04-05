@@ -7,6 +7,10 @@ FactoryBot.define do
     state { :todo }
     priority { :low }
 
+    after(:build) do |task|
+      task.id = User.first || create(:user)
+    end
+
     trait :second_task do
       title { "task-2" }
       content { "task-content-2" }
