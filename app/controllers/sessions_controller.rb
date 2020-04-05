@@ -10,13 +10,13 @@ class SessionsController < ApplicationController
       redirect_to root_path
     else
       flash[:alert] = t('.alert')
-      render 'new'
+      render :new
     end
   end
 
   def destroy
     session[:user_id] = nil
     flash[:notice] = t('.notice')
-    redirect_to root_url
+    redirect_to login_path
   end
 end

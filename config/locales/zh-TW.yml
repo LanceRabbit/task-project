@@ -90,6 +90,7 @@ zh-TW:
       notice: "註冊帳號成功"
       alert: "註冊帳號失敗"
       duplicated: "電子信箱已註冊"
+    authenticate: "請登入帳號"
   sessions:
     create:
       notice: "登入成功"

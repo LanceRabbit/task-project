@@ -1,4 +1,6 @@
 class TasksController < ApplicationController
+  before_action :authenticate_user
+
   before_action :set_task, only: %i[show edit update destroy execute finish]
   before_action :check_task_exist?, only: %i[show edit update destroy execute finish]
 
