@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.feature "CreateTask", type: :feature do
   feature "Create page is work" do
     before(:each) do
+      FactoryBot.create(:user)
       visit tasks_path
       click_link I18n.t('views.tasks.add')
     end
