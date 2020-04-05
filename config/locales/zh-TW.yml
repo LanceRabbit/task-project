@@ -107,6 +107,7 @@ zh-TW:
         alert: "此帳號不存在"
       destroy:
         notice: "刪除帳號成功"
+    access_deny: "權限不足"
   sessions:
     create:
       notice: "登入成功"

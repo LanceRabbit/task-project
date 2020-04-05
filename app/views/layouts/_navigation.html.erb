@@ -15,9 +15,11 @@
                     <%= link_to t('views.users.logout'), logout_path, method: :delete, class: 'dropdown-item' %>
                   </div>
                 </li>
-                <li class='nav-item'>
-                  <%= link_to t('views.admin'), admin_root_path, class:'nav-link' %>
-                </li>
+                <% if current_user.admin? %>
+                  <li class='nav-item'>
+                    <%= link_to t('views.admin'), admin_root_path, class:'nav-link' %>
+                  </li>
+                <% end %>
               <% else %>
                 <li class="nav-item">
                   <%= link_to '登入', login_path , class:'nav-link'%>
