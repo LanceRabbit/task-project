@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  before_action :check_email, only: :create
   def show
   end
 
@@ -14,6 +14,7 @@ class UsersController < ApplicationController
       flash[:notice] = t('.notice')
       redirect_to root_path
     else
+      flash[:alert] = t('.alert')
       render :new
     end
   end
@@ -25,6 +26,14 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def check_email
+    @user = User.find_by(email: params[:user][:email])
+    if @user.present?
+      flash[:alert] = t(".duplicated")
+      render :new
+    end
+  end
 
   def set_user
     @user = User.find(params[:id])
