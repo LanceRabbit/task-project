@@ -61,6 +61,11 @@ en:
         low: "low"
         medium: "medium"
         high: "high"
+    user:
+      email: "email"
+      name: "user name"
+      password: "password"
+      password_confirmation: "password confirm"
   tasks:
     create:
       notice: "Create Task successfully"
@@ -74,6 +79,11 @@ en:
       alert: "This Task not exist"
     edit:
       alert: "This Task not exist"
+  users:
+    create:
+      notice: "Sign up successfully"
+      alert: "Sign up Failed"
+      duplicated: "email has been exist"
   activerecord:
     errors:
       models:

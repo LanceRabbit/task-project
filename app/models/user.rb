@@ -1,7 +1,14 @@
 class User < ApplicationRecord
+  before_save :email_downcase
+  validates :email, presence: true, uniqueness: true,
+            format: /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
+  validates :password, presence: true, length: { minimum: 8 }
+
   has_secure_password
-
-  validates :email, presence: true, uniqueness: true
-
   has_many :tasks
+
+  def email_downcase
+    p "12314231242312412412"
+    self.email = email.downcase
+  end
 end

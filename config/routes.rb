@@ -7,4 +7,6 @@ Rails.application.routes.draw do
       post :finish
     end
   end
+
+  resources :users
 end
