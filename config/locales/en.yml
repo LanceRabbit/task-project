@@ -84,6 +84,12 @@ en:
       notice: "Sign up successfully"
       alert: "Sign up Failed"
       duplicated: "email has been exist"
+  sessions:
+    create:
+      notice: "Login successfully"
+      alert: "wrong email or password"
+    destroy:
+      notice: "Logout successfully"
   activerecord:
     errors:
       models:
