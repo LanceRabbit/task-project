@@ -51,6 +51,8 @@ gem 'kaminari', '>= 1.2.0'
 gem 'bootstrap', '~> 4.4.1'
 # Bootstrap JavaScript depends on jQuery. add the jquery-rails gem
 gem 'jquery-rails'
+# colorful pagination views
+gem 'bootstrap4-kaminari-views'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
