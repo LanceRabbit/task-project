@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_secure_password
   has_many :tasks, dependent: :destroy
 
+  enum role: %i[normal admin]
+
   def email_downcase
     self.email = email.downcase
   end
