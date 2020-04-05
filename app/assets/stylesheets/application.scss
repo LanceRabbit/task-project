@@ -1,2 +1,15 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+$white: white;
+$black: black;
+
+.navbar {
+        margin-bottom: 0;
+        background: $black;
+}
+
+.notify {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}

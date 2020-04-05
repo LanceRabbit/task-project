@@ -38,6 +38,7 @@ zh-TW:
     delete_confirm_msg: "確定要刪除嗎？"
     back: "返回"
     home: "首頁"
+    task_board: "任務面板"
     pagination:
       first: "<< 第一頁"
       last: "最後一頁 >>"
