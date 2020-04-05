@@ -12,4 +12,8 @@ class User < ApplicationRecord
   def email_downcase
     self.email = email.downcase
   end
+
+  def admin?
+    role == 'admin'
+  end
 end
