@@ -40,6 +40,7 @@ en:
     back: "Back"
     home: "Home"
     task_board: "Task Board"
+    admin: "Admin"
     tasks:
       title: "Title"
       content: "Content"
