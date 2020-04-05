@@ -6,6 +6,7 @@ FactoryBot.define do
     end_date { Date.today + 5 }
     state { :todo }
     priority { :low }
+    association :user
 
     trait :second_task do
       title { "task-2" }

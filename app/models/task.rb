@@ -1,6 +1,8 @@
 class Task < ApplicationRecord
   include AASM
 
+  belongs_to :user
+
   validates :title, presence: true
 
   SORT_OPTIONS = {
