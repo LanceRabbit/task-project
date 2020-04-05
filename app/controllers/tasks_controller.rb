@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   def index
     @q = Task.ransack(params[:q])
     @tasks = @q.result
-      .order_created(sort_params(params[:sort].try(&:to_sym)))
+      .order_created(current_user.id, sort_params(params[:sort].try(&:to_sym)))
       .page(params[:page])
       .per(3)
   end
@@ -22,7 +22,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.user = User.first
+    @task.user = current_user
     if @task.save
       flash[:notice] = t(".notice")
       redirect_to task_path(@task)
