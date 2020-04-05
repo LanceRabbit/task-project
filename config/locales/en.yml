@@ -86,6 +86,20 @@ en:
       alert: "Sign up Failed"
       duplicated: "email has been exist"
     authenticate: "Please Login your account"
+  admin:
+    users:
+      create:
+        notice: "Add new account successfully"
+        alert: "Add new account failed"
+      update:
+        notice: "update account successfully"
+        alert: "update account failed"
+      show:
+        alert: "This account not exist"
+      edit:
+        alert: "This account not exist"
+      destroy:
+        notice: "Destroy account successfully"
   sessions:
     create:
       notice: "Login successfully"

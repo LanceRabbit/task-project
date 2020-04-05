@@ -15,24 +15,44 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def new
+    @user = User.new
   end
 
   def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = t('.notice')
+      redirect_to admin_root_path
+    else
+      flash[:alert] = t('.alert')
+      render new_admin_user_path
+    end
   end
 
   def edit
+
   end
 
   def update
+    if @user.update(user_params)
+      flash[:notice] = t(".notice")
+      redirect_to admin_user_path(@user)
+    else
+      flash[:alert] = t(".alert")
+      render :action => 'edit'
+    end
   end
 
   def destroy
+    @user.destroy
+    flash[:alert] = t('.notice')
+    redirect_to admin_root_path
   end
 
   private
 
   def set_user
-    @user = User.find(params[:id])
+    @user = User.find_by(id: params[:id])
   end
 
   def check_user_exist?
@@ -41,4 +61,9 @@ class Admin::UsersController < Admin::BaseController
       redirect_to admin_root_path
     end
   end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
 end

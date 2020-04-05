@@ -91,6 +91,20 @@ zh-TW:
       alert: "註冊帳號失敗"
       duplicated: "電子信箱已註冊"
     authenticate: "請登入帳號"
+  admin:
+    users:
+      create:
+        notice: "新增帳號成功"
+        alert: "新增帳號失敗"
+      update:
+        notice: "更新帳號成功"
+        alert: "更新帳號失敗"
+      show:
+        alert: "此帳號不存在"
+      edit:
+        alert: "此帳號不存在"
+      destroy:
+        notice: "刪除帳號成功"
   sessions:
     create:
       notice: "登入成功"
