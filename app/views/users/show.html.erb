@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-header">
+     <%= t('views.detail')%>
+  </div>
+  <div class="card-body">
+    <div>
+      <%= t('views.users.name')%>:
+      <%= @user.name %>
+    </div>
+    <hr>
+    <div>
+      <%= t('views.users.email')%>:
+      <%= @user.email %>
+    </div>
+    <hr>
+    <div class="float-right">
+      <%= link_to t('views.back'), :back, class: 'btn btn-danger' %>
+    </div>
+  </div>
+</div>
