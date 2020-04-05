@@ -2,11 +2,14 @@ require 'rails_helper'
 
 RSpec.feature "ShowTask", type: :feature do
   feature "Show page is work" do
-    let(:task) { FactoryBot.create(:task) }
-
     before(:each) do
-      @task = task
-      visit tasks_path
+      @user = FactoryBot.create(:user)
+      @task = FactoryBot.create(:task, user_id: @user.id)
+      visit login_path
+      fill_in 'session_email',    with: @user.email
+      fill_in 'session_password', with: @user.password
+      click_button I18n.t('views.users.login')
+
       click_link I18n.t('views.show')
     end
 

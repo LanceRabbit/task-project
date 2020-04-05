@@ -6,17 +6,17 @@
     <div class="card-body">
       <%= simple_form_for(:session, url: login_path) do |f| %>
         <div class="form-group">
-          <%= f.label t('views.user.email') %>
+          <%= f.label t('views.users.email') %>
           <%= f.email_field :email, class: 'form-control', :pattern => '[^@]+@[^@]+\.[a-zA-Z]{2,6}'  %>
         </div>
         <div class="form-group">
-          <%= f.label t('views.user.password') %>
+          <%= f.label t('views.users.password') %>
           <%= f.password_field :password, class: 'form-control' %>
         </div>
 
         <div class="form-group">
           <div class="float-right">
-            <%= f.button :submit, "Login", class: 'btn btn-primary' %>
+            <%= f.button :submit, t('views.users.login'), class: 'btn btn-primary' %>
           </div>
         </div>
 

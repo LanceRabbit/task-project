@@ -66,12 +66,12 @@ zh-TW:
         low: "低"
         medium: "中"
         high: "高"
-    user:
+    users:
       email: "電子信箱"
       name: "使用名稱"
       password: "密碼"
       password_confirmation: "密碼確認"
-
+      login: "登入"
   tasks:
     create:
       notice: "新增任務成功"

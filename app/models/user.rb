@@ -8,7 +8,6 @@ class User < ApplicationRecord
   has_many :tasks
 
   def email_downcase
-    p "12314231242312412412"
     self.email = email.downcase
   end
 end
