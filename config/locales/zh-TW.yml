@@ -89,7 +89,13 @@ zh-TW:
     create:
       notice: "註冊帳號成功"
       alert: "註冊帳號失敗"
-      duplicated: "email 已註冊"
+      duplicated: "電子信箱已註冊"
+  sessions:
+    create:
+      notice: "登入成功"
+      alert: "錯誤的電子信箱或密碼"
+    destroy:
+      notice: "已登出"
   activerecord:
     errors:
       models:
