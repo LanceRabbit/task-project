@@ -1,11 +1,10 @@
-<h1> Task-Project </h1>
 <%= search_form_for @q do |f| %>
   <%= f.input :title_cont, label: t('views.tasks.title') %>
   <%= f.input :state_eq, as: :select, label: t('views.tasks.state_t'), collection: state_options, label_method: :second, value_method: :first %>
   <%= f.submit %>
 <% end %>
 <hr>
-<%= button_to t('views.tasks.add'), new_task_path, :method => "get" %>
+
 <table border="1" style="border-collapse: collapse;">
   <thead>
     <tr>
