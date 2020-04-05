@@ -84,6 +84,7 @@ en:
       notice: "Sign up successfully"
       alert: "Sign up Failed"
       duplicated: "email has been exist"
+    authenticate: "Please Login your account"
   sessions:
     create:
       notice: "Login successfully"

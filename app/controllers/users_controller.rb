@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user, only: %i[show]
+  before_action :set_user, only: [:show]
   before_action :check_email, only: :create
 
   def show
@@ -18,12 +19,6 @@ class UsersController < ApplicationController
       flash[:alert] = t('.alert')
       render :new
     end
-  end
-
-  def edit
-  end
-
-  def update
   end
 
   private
