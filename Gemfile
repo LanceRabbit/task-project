@@ -47,6 +47,10 @@ gem 'aasm', '>= 5.0.8'
 gem 'ransack', '>= 2.3.2'
 # pagination
 gem 'kaminari', '>= 1.2.0'
+# colorful display
+gem 'bootstrap', '~> 4.4.1'
+# Bootstrap JavaScript depends on jQuery. add the jquery-rails gem
+gem 'jquery-rails'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
