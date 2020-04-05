@@ -5,7 +5,6 @@ module TasksHelper
 
   def sort_option(type)
     link_to t("views.tasks.#{type}"), tasks_path(sort: type)
-
   end
 
   def state_control(task)
@@ -21,8 +20,8 @@ module TasksHelper
   end
 
   def state_options
-    Task.states.keys.map do |state|
-      [Task.states[state], I18n.t("views.tasks.state.#{state}")]
+    Task.states.map do |state|
+      [ I18n.t("views.tasks.state.#{state[0]}"), state[1],{ class: state[1]}]
     end
   end
 

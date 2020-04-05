@@ -7,7 +7,7 @@ RSpec.feature "ShowTask", type: :feature do
     before(:each) do
       @task = task
       visit tasks_path
-      click_button I18n.t('views.show')
+      click_link I18n.t('views.show')
     end
 
     scenario "see the title and content" do

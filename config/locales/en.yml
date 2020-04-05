@@ -34,10 +34,12 @@ en:
     update: "Update"
     edit: "Edit"
     show: "Show"
+    detail: "Detail"
     delete: "Delete"
     delete_confirm_msg: "Really want to delete this data?"
     back: "Back"
     home: "Home"
+    task_board: "Task Board"
     tasks:
       title: "Title"
       content: "Content"
