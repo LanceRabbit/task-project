@@ -66,7 +66,12 @@ zh-TW:
         low: "低"
         medium: "中"
         high: "高"
-
+    users:
+      email: "電子信箱"
+      name: "使用名稱"
+      password: "密碼"
+      password_confirmation: "密碼確認"
+      login: "登入"
   tasks:
     create:
       notice: "新增任務成功"
@@ -80,6 +85,18 @@ zh-TW:
       alert: "任務不存在"
     edit:
       alert: "任務不存在"
+  users:
+    create:
+      notice: "註冊帳號成功"
+      alert: "註冊帳號失敗"
+      duplicated: "電子信箱已註冊"
+    authenticate: "請登入帳號"
+  sessions:
+    create:
+      notice: "登入成功"
+      alert: "錯誤的電子信箱或密碼"
+    destroy:
+      notice: "已登出"
   activerecord:
     errors:
       models:
