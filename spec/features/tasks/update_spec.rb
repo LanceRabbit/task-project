@@ -3,11 +3,16 @@ require 'rails_helper'
 RSpec.feature "UpdateTask", type: :feature do
   feature "Update action is work" do
     before(:each) do
-      @task = FactoryBot.create(:task)
+      @user = FactoryBot.create(:user)
+      @task = FactoryBot.create(:task, user_id: @user.id)
+
+      visit login_path
+      fill_in 'session_email',    with: @user.email
+      fill_in 'session_password', with: @user.password
+      click_button I18n.t('views.users.login')
     end
 
     scenario "update task at index page" do
-      visit tasks_path
       # find('input[value="Edit"]').click
       click_link I18n.t('views.edit')
       fill_in 'task[title]',	with: 'update title'
@@ -17,7 +22,6 @@ RSpec.feature "UpdateTask", type: :feature do
     end
 
     scenario "update task at show page" do
-      visit tasks_path
       click_link I18n.t('views.show')
       click_link I18n.t('views.edit')
       fill_in 'task[title]',	with: 'update title'

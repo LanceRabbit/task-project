@@ -66,6 +66,7 @@ en:
       name: "user name"
       password: "password"
       password_confirmation: "password confirm"
+      login: "Login"
   tasks:
     create:
       notice: "Create Task successfully"
