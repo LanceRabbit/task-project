@@ -1,36 +1,40 @@
-<h1>task show page</h1>
-<%= button_to t('views.edit'), edit_task_path, :method => "get" %>
-<div style="border: 1px solid black; width: 250px;">
-  <div>
-    <%= t('views.tasks.title')%>:
-    <%= @task.title %>
+<div class="card">
+  <div class="card-header">
+     <%= t('views.detail')%>
   </div>
-  <hr>
-  <div>
-    <%= t('views.tasks.content')%>:
-    <%= @task.content %>
+  <div class="card-body">
+    <div>
+      <%= t('views.tasks.title')%>:
+      <%= @task.title %>
+    </div>
+    <hr>
+    <div>
+      <%= t('views.tasks.content')%>:
+      <%= @task.content %>
+    </div>
+    <hr>
+    <div>
+      <%= t('views.tasks.start_date')%>:
+      <%= @task.start_date %>
+    </div>
+    <hr>
+    <div>
+      <%= t('views.tasks.end_date')%>:
+      <%= @task.end_date %>
+    </div>
+    <hr>
+    <div>
+      <%= t('views.tasks.state_t')%> :
+      <%= t("views.tasks.state.#{@task.state}") %>
+      <%= state_control(@task) %>
+    </div>
+    <hr>
+    <div>
+      <%= t('views.tasks.priority_t')%> :
+      <%= t("views.tasks.priority.#{@task.priority}") %>
+    </div>
+  <div class="float-right">
+    <%= link_to t('views.edit'), edit_task_path, :method => "get", class: 'btn btn-primary'  %>
   </div>
-  <hr>
-  <div>
-    <%= t('views.tasks.start_date')%>:
-    <%= @task.start_date %>
-  </div>
-  <hr>
-  <div>
-    <%= t('views.tasks.end_date')%>:
-    <%= @task.end_date %>
-  </div>
-  <hr>
-  <div>
-    <%= t('views.tasks.state_t')%> :
-    <%= t("views.tasks.state.#{@task.state}") %>
-    <%= state_control(@task) %>
-  </div>
-  <hr>
-  <div>
-    <%= t('views.tasks.priority_t')%> :
-    <%= t("views.tasks.priority.#{@task.priority}") %>
   </div>
 </div>
-<br>
-<%= link_to t('views.home'), root_path %>

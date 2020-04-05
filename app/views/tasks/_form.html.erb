@@ -6,13 +6,37 @@
   </ul>
 <% end %>
 
-<%= simple_form_for @task do |f| %>
-  <%= f.input :title, label: t('views.tasks.title'), error: false %>
-  <%= f.input :content, label: t('views.tasks.content') %>
-  <%= f.input :start_date, label: t('views.tasks.start_date')%>
-  <%= f.input :end_date, label: t('views.tasks.end_date')%>
-  <%= f.input :priority, as: :radio_buttons, label: t('views.tasks.priority_t'), collection: priority_options, label_method: :second, value_method: :first %>
-
-  <%= f.button :submit, new_data?(@task) %>
-<% end %>
-<button style="border: 1px solid black"><%= link_to t('views.back'), :back %></button>
+<div class="card">
+  <div class="card-header">
+    Filters
+  </div>
+  <div class="card-body">
+    <%= simple_form_for @task do |f| %>
+      <div class="form-group">
+        <%= f.label t('views.tasks.title') %>
+        <%= f.text_field :title, class: 'form-control', error: false %>
+      </div>
+      <div class="form-group">
+        <%= f.label t('views.tasks.content') %>
+        <%= f.text_field :content, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label t('views.tasks.start_date') %>
+        <%= f.date_field :start_date, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label t('views.tasks.end_date') %>
+        <%= f.date_field :end_date, class: 'form-control' %>
+      </div>
+      <div class="form-group priority">
+        <%= f.label t('views.tasks.priority_t') %>
+        <br>
+        <%= f.collection_radio_buttons :priority, priority_options,
+          :first, :last, { item_wrapper_tag: false } do |b|
+          b.radio_button + b.label(:class => "collection_radio_buttons icon-star")
+          end
+        %>
+      </div>
+      <%= f.button :submit, new_data?(@task), class: 'btn btn-success' %>
+      <%= link_to t('views.back'), :back, class: 'btn btn-danger' %>
+    <% end %>

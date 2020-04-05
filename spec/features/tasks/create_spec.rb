@@ -4,7 +4,7 @@ RSpec.feature "CreateTask", type: :feature do
   feature "Create page is work" do
     before(:each) do
       visit tasks_path
-      click_button I18n.t('views.tasks.add')
+      click_link I18n.t('views.tasks.add')
     end
 
     scenario "have Create button" do
