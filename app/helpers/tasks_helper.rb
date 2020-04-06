@@ -31,6 +31,12 @@ module TasksHelper
     end
   end
 
+  def tag_options
+    Tag.all.map do |tag|
+      [tag.name, tag.id]
+    end
+  end
+
   def list_tags(tags)
     tags.map do |tag|
       "<span class='badge badge-light'>#{tag}</span>"
