@@ -62,13 +62,17 @@ en:
         low: "low"
         medium: "medium"
         high: "high"
-    user:
+    users:
       email: "email"
       name: "user name"
       password: "password"
       password_confirmation: "password confirm"
       login: "Login"
       tasks_count: "Task Count"
+    role_t: "角色"
+    role:
+      normal: "使用者"
+      admin: "管理者"
   tasks:
     create:
       notice: "Create Task successfully"

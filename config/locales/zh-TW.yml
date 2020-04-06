@@ -74,6 +74,10 @@ zh-TW:
       password_confirmation: "密碼確認"
       login: "登入"
       tasks_count: "任務數量"
+      role_t: "角色"
+      role:
+        normal: "使用者"
+        admin: "管理者"
   tasks:
     create:
       notice: "新增任務成功"
