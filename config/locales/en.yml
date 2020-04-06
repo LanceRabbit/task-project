@@ -62,6 +62,7 @@ en:
         low: "low"
         medium: "medium"
         high: "high"
+      tag: "tag"
     users:
       email: "email"
       name: "user name"

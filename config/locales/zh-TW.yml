@@ -67,6 +67,7 @@ zh-TW:
         low: "低"
         medium: "中"
         high: "高"
+      tag: "標籤"
     users:
       email: "電子信箱"
       name: "使用名稱"

@@ -75,7 +75,7 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.require(:task).permit(:title, :content, :start_date, :end_date, :priority)
+    params.require(:task).permit(:title, :content, :start_date, :end_date, :priority, { tag_items: [] })
   end
 
   def set_task

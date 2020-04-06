@@ -14,7 +14,7 @@ class Task < ApplicationRecord
     priority_t: "priority desc",
   }
   scope :order_created, ->(user_id, orded) do
-    includes(:user)
+    includes(:user, :tags)
       .where(users: { id: user_id })
       .order(orded)
   end
@@ -34,4 +34,14 @@ class Task < ApplicationRecord
       transitions from: %i[todo doing], to: :completed
     end
   end
+
+  def tag_items
+    tags.map(&:name)
+  end
+
+  def tag_items=(names)
+    self.tags = names.map{|item|
+      Tag.where(name: item.strip).first_or_create! unless item.blank?}.compact!
+  end
+
 end
