@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
   before_action :authenticate_user
-
   before_action :set_task, only: %i[show edit update destroy execute finish]
   before_action :check_task_exist?, only: %i[show edit update destroy execute finish]
+  before_action :current_user_post?, only: %i[show edit update destroy execute finish]
 
   def index
     @q = Task.ransack(params[:q])
@@ -87,6 +87,10 @@ class TasksController < ApplicationController
       flash[:alert] = t(".alert")
       redirect_to root_path
     end
+  end
+
+  def current_user_post?
+    return render_404 if @task.user_id != current_user.id
   end
 
 end

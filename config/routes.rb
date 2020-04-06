@@ -20,4 +20,6 @@ Rails.application.routes.draw do
     root 'users#index'
     resources :users
   end
+
+  get '*path', to: 'errors#wrong_path'
 end

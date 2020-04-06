@@ -15,4 +15,9 @@ class ApplicationController < ActionController::Base
       return redirect_to login_path
     end
   end
+
+  def render_404
+    render file: "#{Rails.root}/public/404", status: :not_found, layout: false
+  end
+
 end
