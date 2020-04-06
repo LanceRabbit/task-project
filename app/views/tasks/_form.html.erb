@@ -37,6 +37,21 @@
           end
         %>
       </div>
+      <div class="form-group">
+        <%= f.input :tag_items, label: t('views.tasks.tag'), as: :select, collection: Tag.order(:name), label_method: :name,value_method: :name, input_html: {multiple: true} %>
+      </div>
       <%= f.button :submit, new_data?(@task), class: 'btn btn-success' %>
       <%= link_to t('views.back'), :back, class: 'btn btn-danger' %>
     <% end %>
+  </div>
+</div>
+
+<script>
+  $(document).on('turbolinks:load', function () {
+    $("#task_tag_items").select2({
+      tags: true,
+      tokenSeparators: [',', ' '],
+      width: '100%'
+    })
+  });
+</script>

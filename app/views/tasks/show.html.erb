@@ -33,6 +33,11 @@
       <%= t('views.tasks.priority_t')%> :
       <%= t("views.tasks.priority.#{@task.priority}") %>
     </div>
+    <hr>
+    <div>
+      <%= t('views.tasks.tag')%> :
+      <%= list_tags(@task.tag_items) %>
+    </div>
   <div class="float-right">
     <%= link_to t('views.edit'), edit_task_path, :method => "get", class: 'btn btn-primary'  %>
   </div>
