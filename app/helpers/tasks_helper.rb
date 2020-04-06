@@ -30,4 +30,10 @@ module TasksHelper
       [priority, I18n.t("views.tasks.priority.#{priority}")]
     end
   end
+
+  def list_tags(tags)
+    tags.map do |tag|
+      "<span class='badge badge-light'>#{tag}</span>"
+    end.join(' ').html_safe
+  end
 end
