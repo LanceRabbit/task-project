@@ -30,7 +30,10 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def edit
-
+    if @user.id == current_user.id
+      flash[:alert] = t(".warning")
+      redirect_to admin_root_path
+    end
   end
 
   def update
@@ -44,9 +47,13 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def destroy
-    @user.destroy
-    flash[:alert] = t('.notice')
-    redirect_to admin_root_path
+    if @user.destroy
+      flash[:notice] = t('.notice')
+      redirect_to admin_root_path
+    else
+      flash[:alert] = @user.errors[:base][0]
+      redirect_to admin_root_path
+    end
   end
 
   private
@@ -63,7 +70,7 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :role)
   end
 
 end
