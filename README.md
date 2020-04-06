@@ -49,12 +49,15 @@ table tasks
 |created_at| datetime|
 |updated_at| datetime|
 
-table task_tags
+table taggings
 
 |column | type|
 |---|---|
 |task_id | integer|
 |tag_id | integer|
+|created_at| datetime|
+|updated_at| datetime|
+
 
 table tags
 
