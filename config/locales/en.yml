@@ -69,10 +69,11 @@ en:
       password_confirmation: "password confirm"
       login: "Login"
       tasks_count: "Task Count"
-    role_t: "角色"
+    role_t: "role"
     role:
-      normal: "使用者"
-      admin: "管理者"
+      normal: "Normal"
+      admin: "Admin"
+    keep_one_admin: "Can not delete the last admin account"
   tasks:
     create:
       notice: "Create Task successfully"
@@ -92,6 +93,7 @@ en:
       alert: "Sign up Failed"
       duplicated: "email has been exist"
     authenticate: "Please Login your account"
+    keep_one_admin: "Can not delete the last admin"
   admin:
     users:
       create:
@@ -104,6 +106,7 @@ en:
         alert: "This account not exist"
       edit:
         alert: "This account not exist"
+        warning: "Can not edit your account on admin"
       destroy:
         notice: "Destroy account successfully"
     access_deny: "Access deny"
