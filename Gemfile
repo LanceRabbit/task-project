@@ -55,7 +55,8 @@ gem 'jquery-rails'
 gem 'bootstrap4-kaminari-views'
 # for select
 gem 'select2-rails', '>= 4.0.3'
-
+# fake data
+gem 'ffaker'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
