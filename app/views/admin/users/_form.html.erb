@@ -33,6 +33,16 @@
           <%= f.password_field :password_confirmation, class: 'form-control', required: true %>
         </div>
 
+        <div class="form-group priority">
+          <%= f.label t('views.users.role_t') %>
+          <br>
+          <%= f.collection_radio_buttons :role, role_options,
+            :first, :last, { item_wrapper_tag: false } do |b|
+            b.radio_button + b.label(:class => "collection_radio_buttons icon-star")
+            end
+          %>
+        </div>
+
         <div class="form-group">
           <div class="float-right">
             <%= f.submit class: 'btn btn-primary' %>
