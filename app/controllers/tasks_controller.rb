@@ -9,7 +9,7 @@ class TasksController < ApplicationController
     @tasks = @q.result
       .order_created(current_user.id, sort_params(params[:sort].try(&:to_sym)))
       .page(params[:page])
-      .per(3)
+      .per(10)
   end
 
   def show

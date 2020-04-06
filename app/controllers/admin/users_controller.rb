@@ -11,7 +11,7 @@ class Admin::UsersController < Admin::BaseController
     @tasks = @q.result
       .order_created(@user.id, Task::SORT_OPTIONS[:created_at])
       .page(params[:page])
-      .per(3)
+      .per(10)
   end
 
   def new
