@@ -78,6 +78,7 @@ zh-TW:
       role:
         normal: "使用者"
         admin: "管理者"
+      keep_one_admin: "無法刪除唯一管理者"
   tasks:
     create:
       notice: "新增任務成功"
@@ -97,6 +98,7 @@ zh-TW:
       alert: "註冊帳號失敗"
       duplicated: "電子信箱已註冊"
     authenticate: "請登入帳號"
+    keep_one_admin: "無法刪除最後一位管理者"
   admin:
     users:
       create:
@@ -109,6 +111,7 @@ zh-TW:
         alert: "此帳號不存在"
       edit:
         alert: "此帳號不存在"
+        warning: "編輯帳號與登入帳號相同時，無法編輯"
       destroy:
         notice: "刪除帳號成功"
     access_deny: "權限不足"
