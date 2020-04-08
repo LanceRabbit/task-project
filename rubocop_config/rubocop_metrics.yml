@@ -1,0 +1,73 @@
+# https://rubocop.readthedocs.io/en/latest/cops_metrics/
+
+Metrics/AbcSize:
+  Description: >-
+                 A calculated magnitude based on number of assignments,
+                 branches, and conditions.
+  Enabled: false
+  Max: 15
+
+Metrics/BlockLength:
+  Description: Avoid long blocks with many lines.
+  Enabled: false
+  Max: 25
+  CountComments: false
+  Exclude:
+    - 'spec/**/*'
+
+Metrics/BlockNesting:
+  Description: Avoid excessive block nesting
+  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#three-is-the-number-thou-shalt-count
+  Enabled: false
+  CountBlocks: false
+  Max: 3
+
+Metrics/ClassLength:
+  Description: Avoid classes longer than 100 lines of code.
+  Enabled: false
+  CountComments: false
+  Max: 100
+
+# Avoid complex methods.
+Metrics/CyclomaticComplexity:
+  Description: >-
+                 A complexity metric that is strongly correlated to the number
+                 of test cases needed to validate a method.
+  Enabled: false
+  Max: 6
+
+Metrics/LineLength:
+  Description: Limit lines to 100 characters.
+  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#80-character-limits
+  Enabled: false
+  Max: 100
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # containing a URI to be longer than Max.
+  AllowURI: true
+
+Metrics/MethodLength:
+  Description: Avoid methods longer than 10 lines of code.
+  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#short-methods
+  Enabled: false
+  CountComments: false
+  Max: 10
+
+Metrics/ModuleLength:
+  Description: Avoid modules longer than 100 lines of code.
+  Enabled: false
+  CountComments: false
+  Max: 100
+
+Metrics/ParameterLists:
+  Description: Avoid parameter lists longer than three or four parameters.
+  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#too-many-params
+  Enabled: false
+  CountKeywordArgs: true
+  Max: 5
+
+Metrics/PerceivedComplexity:
+  Description: >-
+                 A complexity metric geared towards measuring complexity for a
+                 human reader.
+  Enabled: false
+  Max: 7
