@@ -67,6 +67,9 @@ group :development, :test do
   gem 'factory_bot_rails', '~> 5.1.1'
   gem 'shoulda-matchers', '>= 4.3.0'
   gem 'database_cleaner', '>= 1.8.3'
+  # coding style
+  gem 'rubocop', '>= 0.77.0', require: false
+  gem 'rubocop-rspec', '>= 1.32.0'
 end
 
 group :development do

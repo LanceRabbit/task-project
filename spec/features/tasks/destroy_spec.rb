@@ -10,8 +10,8 @@ RSpec.feature "DestroyTask", type: :feature do
     fill_in 'session_password', with: @user.password
     click_button I18n.t('views.users.login')
 
-    expect {
+    expect do
       click_link I18n.t('views.delete')
-    }.to change{ Task.count }.by(-1)
+    end.to change { Task.count }.by(-1)
   end
 end

@@ -12,12 +12,11 @@ class ApplicationController < ActionController::Base
   def authenticate_user
     unless current_user
       flash[:alert] = t('users.authenticate')
-      return redirect_to login_path
+      redirect_to login_path
     end
   end
 
   def render_404
     render file: "#{Rails.root}/public/404", status: :not_found, layout: false
   end
-
 end

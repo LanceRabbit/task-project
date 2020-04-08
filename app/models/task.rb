@@ -11,16 +11,17 @@ class Task < ApplicationRecord
     created_at: "tasks.created_at desc",
     start_date: "start_date desc",
     end_date: "end_date desc",
-    priority_t: "priority desc",
-  }
+    priority_t: "priority desc"
+  }.freeze
+
   scope :order_created, ->(user_id, orded) do
     includes(:user, :tags)
       .where(users: { id: user_id })
       .order(orded)
   end
 
-  enum state: %i[todo doing completed]
-  enum priority: %i[low medium high]
+  enum state: %i(todo doing completed)
+  enum priority: %i(low medium high)
 
   aasm column: :state, enum: true do
     state :todo, initial: true
@@ -31,7 +32,7 @@ class Task < ApplicationRecord
     end
 
     event :finish do
-      transitions from: %i[todo doing], to: :completed
+      transitions from: %i(todo doing), to: :completed
     end
   end
 
@@ -40,8 +41,8 @@ class Task < ApplicationRecord
   end
 
   def tag_items=(names)
-    self.tags = names.map{|item|
-      Tag.where(name: item.strip).first_or_create! unless item.blank?}.compact!
+    self.tags = names.map do |item|
+      Tag.where(name: item.strip).first_or_create! unless item.blank?
+    end.compact!
   end
-
 end
