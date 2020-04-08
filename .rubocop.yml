@@ -1,0 +1,32 @@
+
+# https://github.com/rubocop-hq/rubocop/blob/master/config/default.yml
+
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'vendor/**/*'
+    - '.git/**/*'
+    - 'db/schema.rb'
+    # - 'node_modules/**/*'
+    - 'config/**/*'
+
+  DefaultFormatter: progress
+  DisabledByDefault: true
+  CacheRootDirectory: tmp/rubocop
+  DisplayCopNames: true
+  DisplayStyleGuide: false
+  StyleGuideCopsOnly: false
+  ExtraDetails: false
+
+Rails:
+  Enabled: false
+
+inherit_from:
+  - './rubocop_config/rubocop_bundler.yml'
+  - './rubocop_config/rubocop_layout.yml'
+  - './rubocop_config/rubocop_lint.yml'
+  - './rubocop_config/rubocop_metrics.yml'
+  - './rubocop_config/rubocop_naming.yml'
+  - './rubocop_config/rubocop_rspec.yml'
+  - './rubocop_config/rubocop_security.yml'
+  - './rubocop_config/rubocop_style.yml'

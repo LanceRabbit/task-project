@@ -5,7 +5,7 @@ namespace :dev do
   task fake_user: :environment do
     20.times do |i|
       user = User.create(
-        name: FFaker::Name::first_name,
+        name: FFaker::Name.first_name,
         email: "user_#{i}@test.com",
         password: "12345678"
       )
@@ -14,11 +14,11 @@ namespace :dev do
   end
 
   task fake_tasks: :environment do
-    200.times do |i|
+    200.times do |_i|
       rand_date = rand(1..3)
       task = Task.create(
-        title: FFaker::Book::title,
-        content: FFaker::Lorem::sentence(30),
+        title: FFaker::Book.title,
+        content: FFaker::Lorem.sentence(30),
         start_date: Date.today.weeks_ago(rand_date),
         end_date: rand_date.week.from_now,
         priority: rand(0..2),
@@ -29,5 +29,4 @@ namespace :dev do
       puts "create task #{task.title}"
     end
   end
-
 end

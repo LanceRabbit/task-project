@@ -1,0 +1,40 @@
+# https://rubocop.readthedocs.io/en/latest/cops_bundler/
+
+Bundler/DuplicatedGem:
+  Description: 'Checks for duplicate gem entries in Gemfile.'
+  Enabled: true
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
+
+Bundler/GemComment:
+  Description: 'Add a comment describing each gem.'
+  Enabled: false
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
+  IgnoredGems: []
+
+Bundler/InsecureProtocolSource:
+  Description: >-
+                 The source `:gemcutter`, `:rubygems` and `:rubyforge` are deprecated
+                 because HTTP requests are insecure. Please change your source to
+                 'https://rubygems.org' if possible, or 'http://rubygems.org' if not.
+  Enabled: false
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
+
+
+Bundler/OrderedGems:
+  Description: >-
+                 Gems within groups in the Gemfile should be alphabetically sorted.
+  Enabled: false
+  TreatCommentsAsGroupSeparators: true
+  Include:
+    - '**/*.gemfile'
+    - '**/Gemfile'
+    - '**/gems.rb'
