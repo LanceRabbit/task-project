@@ -7,7 +7,7 @@ RSpec.feature "Tasks", type: :feature do
     @task_1 = FactoryBot.create(:task, user_id: @user_1.id, created_at: Date.today.weeks_ago(1))
     @task_2 = FactoryBot.create(:task, :second_task, user_id: @user_1.id, end_date: Date.today + 4)
     @task_3 = FactoryBot.create(:task, :completed_task, user_id: @user_1.id, created_at: Date.today.weeks_ago(1))
-    @task_4 = FactoryBot.create(:task, title: "user2-task" , user_id: @user_2.id, created_at: Date.today.weeks_ago(1))
+    @task_4 = FactoryBot.create(:task, title: "user2-task", user_id: @user_2.id, created_at: Date.today.weeks_ago(1))
     @high_task = FactoryBot.create(:task, :high_task, user_id: @user_1.id, created_at: Date.today.weeks_ago(1))
   end
 
@@ -47,7 +47,7 @@ RSpec.feature "Tasks", type: :feature do
     end
 
     scenario "search todo tasks by title" do
-      fill_in 'q[title_cont]',	with: @task_1.title
+      fill_in 'q[title_cont]', with: @task_1.title
       click_button I18n.t('ransack.search')
       expect(page).to have_content(@task_1.title)
       expect(page).not_to have_content(@task_2.title)
@@ -56,7 +56,7 @@ RSpec.feature "Tasks", type: :feature do
 
     scenario "search completed tasks by state" do
       visit tasks_path
-      select I18n.t('views.tasks.state.completed'),	from: 'q[state_eq]'
+      select I18n.t('views.tasks.state.completed'), from: 'q[state_eq]'
       click_button I18n.t('ransack.search')
       expect(page).to have_content(@task_3.title)
       expect(page).not_to have_content(@task_1.title)

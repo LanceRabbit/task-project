@@ -26,7 +26,6 @@ RSpec.describe User, type: :model do
       expect(user.valid?).to be false
     end
 
-
     it 'invalid password' do
       user = FactoryBot.build(:user, :invalid_password)
       expect(user.valid?).to be false
@@ -36,6 +35,5 @@ RSpec.describe User, type: :model do
       user = FactoryBot.build(:user, :invalid_password_confirmation)
       expect(user.valid?).to be false
     end
-
   end
 end

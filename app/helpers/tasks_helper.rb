@@ -21,7 +21,7 @@ module TasksHelper
 
   def state_options
     Task.states.map do |state|
-      [ I18n.t("views.tasks.state.#{state[0]}"), state[1],{ class: state[1]}]
+      [I18n.t("views.tasks.state.#{state[0]}"), state[1], { class: state[1] }]
     end
   end
 

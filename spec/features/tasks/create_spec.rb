@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.feature "CreateTask", type: :feature do
   let(:user) { FactoryBot.create(:user) }
+
   feature "Create page is work" do
     before(:each) do
       @user_1 = user
@@ -19,11 +20,11 @@ RSpec.feature "CreateTask", type: :feature do
     end
 
     scenario "Create new task successfully" do
-      expect {
-        fill_in 'task[title]',	with: 'new test task'
+      expect do
+        fill_in 'task[title]', with: 'new test task'
         fill_in 'task[content]', with: 'detail content'
         click_button I18n.t('views.create')
-      }.to change{Task.count}.by(1)
+      end.to change { Task.count }.by(1)
     end
   end
 end
