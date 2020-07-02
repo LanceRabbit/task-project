@@ -3,9 +3,9 @@
 
 ## env
 
-Rails: 5.2.3
+Rails: 6.0.3
 
-Ruby: 2.5.7
+Ruby: 2.7.1
 
 DB: postgresql
 
