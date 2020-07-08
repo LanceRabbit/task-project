@@ -292,12 +292,6 @@ Layout/FirstHashElementIndentation:
 Layout/HeredocIndentation:
   Description: This cop checks the indentation of the here document bodies.
   Enabled: true
-  SupportedStyles:
-    - auto_detection
-    - squiggly
-    - active_support
-    - powerpack
-    - unindent
 
 # Supports --auto-correct
 Layout/IndentationConsistency:
@@ -576,7 +570,7 @@ Layout/SpaceInsideStringInterpolation:
   - no_space
 
 # Supports --auto-correct
-Layout/Tab:
+Layout/IndentationStyle:
   Description: No hard tabs.
   StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#spaces-indentation
   Enabled: true
@@ -598,3 +592,12 @@ Layout/TrailingWhitespace:
   Enabled: true
   Exclude:
     - '**/Gemfile'
+
+Layout/LineLength:
+  Description: Limit lines to 100 characters.
+  StyleGuide: https://github.com/rubocop-hq/ruby-style-guide#80-character-limits
+  Enabled: false
+  Max: 100
+  # To make it possible to copy or click on URIs in the code, we allow lines
+  # containing a URI to be longer than Max.
+  AllowURI: true
