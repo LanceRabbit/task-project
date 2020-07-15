@@ -20,6 +20,8 @@ class Task < ApplicationRecord
       .order(orded)
   end
 
+  scope :get_title, -> { pluck(arel_table[:id], arel_table[:title]) }
+
   enum state: %i(todo doing completed)
   enum priority: %i(low medium high)
 
