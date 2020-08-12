@@ -12,5 +12,11 @@ module Types
     def full_name
       "#{object.id} - #{object.name}"
     end
+
+    def tasks
+      # HasManyLoader.for(ref_class: CompanyLinkRepository, ref_id: 'company_id').load(object.id)
+      # Loaders::HasMany.for(Task).load(object.id)
+      Loaders::HasMany.for(ref_class: Task, ref_field: 'user_id').load(object.id)
+    end
   end
 end
