@@ -9,6 +9,12 @@ Ruby: 2.7.1
 
 DB: postgresql
 
+## graphl schema
+
+`rails graphql:schema:dump` dumps both a schema.graphql and a schema.json
+`rails graphql:schema:json` dumps only a schema.json
+`rails graphql:schema:idl` dumps only a schema.graphql
+
 ## setup setting
 
 ### set up .env and database file
